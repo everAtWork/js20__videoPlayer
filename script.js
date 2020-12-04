@@ -8,11 +8,19 @@ const timestamp = document.querySelector('timestamp');
 // play & paues
 
 function toggleVideoStatus() {
-    return true;
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
 }
 // update play & pause icon!
 function updatePlayIcon() {
-    return true;
+    if (videp.paused) {
+        play.innerHTML = '<i class="fa fa-play fa-2x"';
+    } else {
+        play.innerHTML = '<i class="fa fa-pause fa-2x"';
+    }
 
 }
 // update progress & timestamp
@@ -25,7 +33,8 @@ function setVideoProgress() {
 }
 
 function stopVideo() {
-    return true;
+    video.currentTime = 0;
+    video.pause();
 }
 
 video.addEventListener('click', toggleVideoStatus);
